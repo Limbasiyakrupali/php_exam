@@ -180,6 +180,19 @@ class Config{
 
     }
 
+    
+    function addstations($station_name, $station_code){
+
+        $this->initConnection();
+
+        $query = "INSERT INTO bookings(station_name,station_code) VALUES($station_name,$station_code)";
+
+        $res = mysqli_query($this->conn, $query);
+
+        return $res;
+
+    }
+
 
 
 }
